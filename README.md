@@ -20,11 +20,11 @@
 
 <br>
 
-I'll be building a an text editor that runs in the browser. To build this text editor, you will start with an existing application and implement methods for getting and storing data to an IndexedDB database. You will use a package called idb, which is a lightweight wrapper around the IndexedDB API. It features a number of methods that are useful for storing and retrieving data, and is used by companies like Google and Mozilla.
+I'll be building a using the MERN stack, with a React front end, MongoDB database, and Node.js/Express.js server and API. It's already set up to allow users to save book searches to the back end.
 
-AS A developer
-I WANT to create notes or code snippets with or without an internet connection
-SO THAT I can reliably retrieve them for later use
+AS AN avid reader
+I WANT to search for new books to read
+SO THAT I can keep a list of books to purchase
 
 ## Links
 
@@ -43,7 +43,7 @@ SO THAT I can reliably retrieve them for later use
 
 ## Usage
 
-The challenge a single-page application that meets the PWA criteria. Additionally, it will feature a number of data persistence techniques that serve as redundancy in case one of the options is not supported by the browser. The application will also function offline.
+The challenge a application that uses an Apollo Server and apply it to the Express.js server as middleware. Additionally, featuring a book’s title, author, description, image, and a link to that book on the Google Books site. The application will also a fully functioning Google Books API search engine built with a RESTful API, and refactor it to be a GraphQL API built with Apollo Server. 
 
 ## Testing
 ```
