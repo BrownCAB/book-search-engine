@@ -48,9 +48,10 @@ The challenge a application that uses an Apollo Server and apply it to the Expre
 ## Testing
 ```
 1. npm i - to install npm
-2. npm develop - Start both client and server concurrently
-3. npm start - Start server and cilent
-4. npm run build - Build client only
+2. npm run seed
+3. npm develop - Start both client and server concurrently
+4. npm start - Start server and cilent
+5. npm run build - Build client only
 
 ```
 ## Credits 
