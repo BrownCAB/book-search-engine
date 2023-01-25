@@ -29,16 +29,17 @@ const resolvers = {
       return { token, user };
     },
     addUser: async (parent, args) => {
+      console.log("****args", args)
       const user = await User.create(args);
       const token = signToken(user);
       return { token, user };
     },
-    savebook: async (parent, { input }, context) => {
+    saveBook: async (parent, { input }, context) => {
         console.log(context);
         if (context.user) {
           const updatedUser = await User.findOneAndUpdate(
             { _id: context.user._id },
-            { $addToSet: { savedBooks: input } },
+            { $addToSet: { savedBooks:{ input } } },
             { new: true, runValidators: true }
             );
             return updatedUser;
