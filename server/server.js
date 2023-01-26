@@ -3,7 +3,7 @@ const express = require('express');
 const db = require('./config/connection');
 // add apollo server
 const { ApolloServer } = require('apollo-server-express'); 
-// const { authMiddleware } = require("./utils/auth");
+const { authMiddleware } = require("./utils/auth");
 const { typeDefs, resolvers } = require('./schemas'); 
 
 const app = express();
@@ -13,7 +13,7 @@ const server = new ApolloServer({
   // introspection: true,
   typeDefs,
   resolvers,
-  // context: authMiddleware,
+  context: authMiddleware,
   //persistedQueries: false,
 }); 
 
@@ -21,9 +21,9 @@ app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
 
 // if we're in production, serve client/build as static assets
-// if (process.env.NODE_ENV === 'production') {
-//   app.use(express.static(path.join(__dirname, '../client/build')));
-// }
+if (process.env.NODE_ENV === 'production') {
+  app.use(express.static(path.join(__dirname, '../client/build')));
+}
 
 // Create a new instance of an Apollo server with the GraphQL schema
 const startApolloServer = async (typeDefs, resolvers) => {

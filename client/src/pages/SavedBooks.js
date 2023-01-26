@@ -5,7 +5,7 @@ import { GET_ME } from '../utils/queries';
 import { REMOVE_BOOK } from '../utils/mutations';
 import Auth from '../utils/auth';
 import { removeBookId } from '../utils/localStorage';
-import { useMutation, useQuery } from "@apollo/react-hooks";
+import { useMutation, useQuery } from "@apollo/client";
 
 const SavedBooks = () => {
   const { loading, data } = useQuery(GET_ME);
@@ -22,12 +22,8 @@ const SavedBooks = () => {
     }
 
     try {
-      const response = await removeBook({
-        variables:{
-          bookId: bookId,
-        }
-      });
-      userData = user;
+      // convert to mongo syntax
+      await removeBook({variables: { bookId: bookId, }});
       removeBookId(bookId);
     } catch (err) {
       console.error(err);

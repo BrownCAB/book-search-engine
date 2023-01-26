@@ -9,7 +9,7 @@ module.exports = {
   authMiddleware: function ({req}) {
     // allows token to be sent via  req.query or headers
       let token = req.query.token || req.headers.authorization;
-    console.log("****token", token)
+
     // ["Bearer", "<tokenvalue>"]
     if (req.headers.authorization) {
       token = token.split(' ').pop().trim();
@@ -32,7 +32,6 @@ module.exports = {
   },
   signToken: function ({ username, email, _id }) {
     const payload = { username, email, _id };
-    console.log("****payload", payload)
 
     return jwt.sign({ data: payload }, secret, { expiresIn: expiration });
   },

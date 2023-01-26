@@ -38,7 +38,7 @@ SO THAT I can keep a list of books to purchase
 2. Install and/or require packages.
 3. Modify the code based on the Acceptance criteria.
 4. Full fill the acceptances criteria grading requirements.
-5. Add, Commit, and Push Repo to Github and Heroku.
+5. Add, Commit, and Push Repo to Heroku.
 6. Follow the instructions to submit the Challenge for review.
 
 ## Usage
