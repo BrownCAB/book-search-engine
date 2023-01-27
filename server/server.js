@@ -1,5 +1,5 @@
 const express = require('express');
-// const path = require('path');
+const path = require('path');
 const db = require('./config/connection');
 // add apollo server
 const { ApolloServer } = require('apollo-server-express'); 
